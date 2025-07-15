@@ -7,7 +7,8 @@ import validaciones.ValidacionesLibro;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.Map;
+
+import java.util.Set;
 
 public class LibroControllerTestSet {
         private final LibroController controller = new LibroController();
@@ -41,8 +42,8 @@ public class LibroControllerTestSet {
                         new Book("Machine Learning", "Cristina Gómez", 2022));
 
         @Test
-        public void testProcesarConTreeMap() {
-                Map<Book, Book> resultado = controller.procesarLibros(libros);
+        public void testProcesarConTreeSet() {
+                Set<Book> resultado = controller.procesarLibros(libros);
                 ValidacionesLibro.validarResultadoTreeSet(resultado);
         }
 }
