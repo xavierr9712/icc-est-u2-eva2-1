@@ -34,12 +34,12 @@ public class App {
                 new Book("Blockchain", "Marta Ríos", 2021),
                 new Book("Machine Learning", "Cristina Gómez", 2022));
 
+               
                 LibroController controller = new LibroController();
-                Set<Book> librosProcesados = controller.procesarLibros(libros);
 
-                System.out.println("Libros procesados (ordenados y sin duplicados):");
-                for (Book book : librosProcesados) {
-                    System.out.println(book);
-                }
+                Set<Book> librosOrdenados = controller.procesarLibros(libros);
+
+                System.out.println("--- Libros procesados y ordenados ---");
+                librosOrdenados.forEach(System.out::println);
     }
 }
