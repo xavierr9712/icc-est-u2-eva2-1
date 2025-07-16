@@ -76,6 +76,12 @@ public class Book implements Comparable<Book>{
             return false;
         return true;
     }
+
+
+    @Override
+    public String toString() {
+        return "Book [titulo=" + titulo + ", autor=" + autor + ", anio=" + anio + "]";
+    }
    
     
 }
