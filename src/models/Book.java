@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public class Book implements Comparable<Book>{
 
     private String titulo;
@@ -44,38 +46,19 @@ public class Book implements Comparable<Book>{
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((titulo == null) ? 0 : titulo.hashCode());
-        result = prime * result + ((autor == null) ? 0 : autor.hashCode());
-        result = prime * result + anio;
-        return result;
+        return Objects.hash(titulo, anio);
     }
-
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Book other = (Book) obj;
-        if (titulo == null) {
-            if (other.titulo != null)
-                return false;
-        } else if (!titulo.equals(other.titulo))
-            return false;
-        if (autor == null) {
-            if (other.autor != null)
-                return false;
-        } else if (!autor.equals(other.autor))
-            return false;
-        if (anio != other.anio)
-            return false;
-        return true;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return anio == book.anio && Objects.equals(titulo, book.titulo);
     }
+
+
+   
 
 
     @Override
